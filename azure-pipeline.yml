@@ -14,4 +14,10 @@ jobs:
       packageType: sdk
       version: 2.2.x
   - script: dotnet --version
-    displayName: 'Display dotnet version'
+    displayName: 'Display DotNet version'
+  - task: UsePythonVersion@0
+    displayName: 'Use Python 3.7'
+    inputs:
+      versionSpec: 3.7.x
+  - script: python --version
+    displayName: 'Display Python version'
