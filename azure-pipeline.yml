@@ -1,0 +1,12 @@
+# SteeltoeOSS/Samples Azure DevOps pipeline
+
+trigger:
+- devops-spike
+
+jobs:
+- job: Spike
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - script: dotnet --version
+    displayName: 'Display dotnet version'
