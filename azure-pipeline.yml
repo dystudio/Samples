@@ -8,5 +8,8 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   steps:
+  - task: UseDotNet@2
+    packageType: sdk
+    version: 2.2.x
   - script: dotnet --version
     displayName: 'Display dotnet version'
