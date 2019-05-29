@@ -21,3 +21,5 @@ jobs:
       versionSpec: 3.7.x
   - script: python --version
     displayName: 'Display Python version'
+  - script: ./test-setup.cmd
+    displayName: 'Setup Python/Behave environment'
