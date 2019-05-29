@@ -21,6 +21,10 @@ jobs:
       versionSpec: 3.7.x
   - script: python --version
     displayName: 'Display Python version'
+  - script: pip --version
+    displayName: 'Display PIP version'
+  - script: pip3 --version
+    displayName: 'Display PIP3 version'
   - script: python -m pip install -r pyenv.pkgs
     displayName: 'Setup Python/Behave environment'
   - script: behave --version
