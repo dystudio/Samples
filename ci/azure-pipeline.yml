@@ -4,6 +4,9 @@ trigger:
 - devops-spike
 
 jobs:
+
+# Configuration:Simple
+
 - job: Configuration_Simple_DotNet22_Windows
   pool:
     vmImage: 'Windows-2019'
@@ -12,15 +15,20 @@ jobs:
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-java8.yml
   - script: behave Configuration/src/AspDotNetCore/Simple
-# - job: Spike_DotNet22_Linux
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: tasks/setup-dotnet2.2.yml
-#   - template: tasks/setup-behave.yml
-# - job: Spike_DotNet22_MacOS
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: tasks/setup-dotnet2.2.yml
-#   - template: tasks/setup-behave.yml
+    displayName: 'Test Configuration:Simple'
+- job: Configuration_Simple_DotNet22_Linux
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  steps:
+  - template: templates/setup-behave.yml
+  - template: templates/setup-dotnet2.2.yml
+  - template: templates/setup-java8.yml
+  - script: behave Configuration/src/AspDotNetCore/Simple
+- job: Configuration_Simple_DotNet22_OSX
+  pool:
+    vmImage: 'MacOS-10.14'
+  steps:
+  - template: templates/setup-behave.yml
+  - template: templates/setup-dotnet2.2.yml
+  - template: templates/setup-java8.yml
+  - script: behave Configuration/src/AspDotNetCore/Simple
