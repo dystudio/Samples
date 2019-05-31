@@ -1,3 +1,5 @@
 steps:
-- script: choco --version
-  displayName: 'Choco Version'
+- script: choco install cloudfoundry-cli
+  displayName: Setup CloudFoundry CLI
+- script: cf-cli --version
+  displayName: CloudFoundry Version
