@@ -10,13 +10,7 @@ jobs:
   # pool:
     # vmImage: 'Ubuntu-16.04'
   steps:
-  - task: UseDotNet@2
-    displayName: 'Use DotNet 2.2.x'
-    inputs:
-      packageType: sdk
-      version: 2.2.x
-  - script: dotnet --version
-    displayName: 'Display DotNet version'
+  - template: tasks/setup-dotnet2.2.yml
   - task: UsePythonVersion@0
     displayName: 'Use Python 3.6'
     inputs:
