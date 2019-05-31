@@ -4,8 +4,3 @@ steps:
   inputs:
     testResultsFormat: JUnit
     testResultsFiles: test.out/reports/TESTS-*.xml
-- task: PublishPipelineArtifact@0
-  condition: always()
-  inputs:
-    targetPath: test.log
-    artifactName: TestLog
