@@ -3,5 +3,5 @@ steps:
   # displayName: 'Setup Java 8'
   # inputs:
     # versionSpec: 8
-- script: java --version
+- script: java -version
   displayName: 'Java Version'
