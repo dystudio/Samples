@@ -11,17 +11,4 @@ jobs:
     # vmImage: 'Ubuntu-16.04'
   steps:
   - template: tasks/setup-dotnet2.2.yml
-  - task: UsePythonVersion@0
-    displayName: 'Use Python 3.6'
-    inputs:
-      versionSpec: 3.6.x
-  - script: python --version
-    displayName: 'Display Python version'
-  - script: pip --version
-    displayName: 'Display PIP version'
-  - script: pip3 --version
-    displayName: 'Display PIP3 version'
-  - script: python -m pip install -r pyenv.pkgs
-    displayName: 'Setup Python/Behave environment'
-  - script: behave --version
-    displayName: 'Display Behave version'
+  - template: tasks/setup-behave.yml
