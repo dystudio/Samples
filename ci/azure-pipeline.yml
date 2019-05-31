@@ -8,8 +8,9 @@ jobs:
   pool:
     vmImage: 'Windows-2019'
   steps:
-  - template: tasks/setup-dotnet2.2.yml
-  - template: tasks/setup-behave.yml
+  - template: templates/setup-behave.yml
+  - template: templates/setup-dotnet2.2.yml
+  - template: templates/setup-java8.yml
   - script: behave Configuration/src/AspDotNetCore/Simple
 # - job: Spike_DotNet22_Linux
 #   pool:
