@@ -15,6 +15,9 @@ jobs:
   - template: templates/setup-dotnet2.2.yml
   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     displayName: 'Sample Configuration:CloudFoundry'
+  - task: PublishTestResults@2
+    testResultsFormat: JUnit
+    testResultsFiles: test.out/report/TEST-*.xml'
 
 # Configuration:Simple
 
