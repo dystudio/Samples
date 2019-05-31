@@ -6,7 +6,9 @@ trigger:
 jobs:
 - job: Spike
   pool:
-    vmImage: 'Ubuntu-16.04'
+    vmImage: 'Windows-2019'
+  # pool:
+    # vmImage: 'Ubuntu-16.04'
   steps:
   - task: UseDotNet@2
     displayName: 'Use DotNet 2.2.x'
