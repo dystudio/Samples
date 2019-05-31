@@ -16,9 +16,9 @@ jobs:
   steps:
   - template: tasks/setup-dotnet2.2.yml
   - template: tasks/setup-behave.yml
-- job: Spike DotNet22 MacOS10.15
+- job: Spike DotNet22 MacOS10.14
   pool:
-    vmImage: 'MacOS-10.15'
+    vmImage: 'MacOS-10.14'
   steps:
   - template: tasks/setup-dotnet2.2.yml
   - template: tasks/setup-behave.yml
