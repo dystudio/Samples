@@ -16,9 +16,9 @@ jobs:
   - script: dotnet --version
     displayName: 'Display DotNet version'
   - task: UsePythonVersion@0
-    displayName: 'Use Python 3.7'
+    displayName: 'Use Python 3.6'
     inputs:
-      versionSpec: 3.7.x
+      versionSpec: 3.6.x
   - script: python --version
     displayName: 'Display Python version'
   - script: pip --version
