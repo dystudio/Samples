@@ -3,6 +3,8 @@ steps:
   displayName: 'Setup Python 3.6'
   inputs:
     versionSpec: 3.6.x
+- script: python --version
+  displayName: 'Python Version'
 - script: python -m pip install -r pyenv.pkgs
   displayName: 'Setup Behave environment'
 - script: behave --version
