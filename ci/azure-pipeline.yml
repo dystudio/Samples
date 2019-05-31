@@ -4,15 +4,21 @@ trigger:
 - devops-spike
 
 jobs:
-- job: Spike_DotNet22_Windows19
+- job: Spike_DotNet22_Windows2019
   pool:
     vmImage: 'Windows-2019'
   steps:
   - template: tasks/setup-dotnet2.2.yml
   - template: tasks/setup-behave.yml
-- job: Spike_DotNet22_Ubuntu16
+- job: Spike_DotNet22_Ubuntu1604
   pool:
     vmImage: 'Ubuntu-16.04'
+  steps:
+  - template: tasks/setup-dotnet2.2.yml
+  - template: tasks/setup-behave.yml
+- job: Spike DotNet22 MacOS10.15
+  pool:
+    vmImage: 'MacOS-10.15'
   steps:
   - template: tasks/setup-dotnet2.2.yml
   - template: tasks/setup-behave.yml
