@@ -15,11 +15,7 @@ jobs:
   - template: templates/setup-dotnet2.2.yml
   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     displayName: 'Sample Configuration:CloudFoundry'
-  - task: PublishTestResults@2
-    condition: always()
-    inputs:
-      testResultsFormat: JUnit
-      testResultsFiles: test.out/report/TEST-*.xml'
+  - template: templates/publish-results.yml
 
 # Configuration:Simple
 
