@@ -19,7 +19,7 @@ jobs:
   # - template: templates/publish-results.yml
   - powershell: Write-Host "Creds are $Env:STEELTOE_PCF_CREDENTIALS"
     env:
-      STEELTOE_PCF_CREDENTIALS: $(STEELTOE_PCF_CREDENTIALS)
+      STEELTOE_PCF_CREDENTIALS: $(steeltoe.credentials.pcf)
     condition: always()
 
 # Configuration:Simple
