@@ -1,71 +1,119 @@
+# =============================================================================
 # SteeltoeOSS/Samples Azure DevOps pipeline
+# =============================================================================
 
 trigger:
 - devops-spike
 
 jobs:
 
-# Configuration:CloudFoundry
+  # ---------------------------------------------------------------------------
+  # Configuration:CloudFoundry
+  # ---------------------------------------------------------------------------
 
-- job: Configuration_CloudFoundry_DotNet22_Windows
+# - job: Configuration_CloudFoundry_DotNet22_Windows
+#   pool:
+#     vmImage: 'Windows-2019'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-windows.yml
+#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+#     displayName: 'Sample Configuration:CloudFoundry'
+#   - template: templates/publish-results.yml
+
+# - job: Configuration_CloudFoundry_DotNet22_Linux
+#   pool:
+#     vmImage: 'Ubuntu-16.04'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-linux.yml
+#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+#     displayName: 'Sample Configuration:CloudFoundry'
+#   - template: templates/publish-results.yml
+
+# - job: Configuration_CloudFoundry_DotNet22_OSX
+#   pool:
+#     vmImage: 'MacOS-10.14'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-osx.yml
+#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+#     displayName: 'Sample Configuration:CloudFoundry'
+#   - template: templates/publish-results.yml
+
+  # ---------------------------------------------------------------------------
+  # Configuration:Simple
+  # ---------------------------------------------------------------------------
+
+# - job: Configuration_Simple_DotNet22_Windows
+#   pool:
+#     vmImage: 'Windows-2019'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-java8.yml
+#   - script: behave Configuration/src/AspDotNetCore/Simple
+#     displayName: 'Test Configuration:Simple'
+#   - template: templates/publish-results.yml
+
+# - job: Configuration_Simple_DotNet22_Linux
+#   pool:
+#     vmImage: 'Ubuntu-16.04'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-java8.yml
+#   - script: behave Configuration/src/AspDotNetCore/Simple
+#     displayName: 'Test Configuration:Simple'
+#   - template: templates/publish-results.yml
+
+# - job: Configuration_Simple_DotNet22_OSX
+#   pool:
+#     vmImage: 'MacOS-10.14'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-java8.yml
+#   - script: behave Configuration/src/AspDotNetCore/Simple
+#     displayName: 'Test Configuration:Simple'
+#   - template: templates/publish-results.yml
+
+  # ---------------------------------------------------------------------------
+  # Configuration:SimpleCloudFoundry
+  # ---------------------------------------------------------------------------
+
+- job: Configuration_SimpleCloudFoundry_DotNet22_Windows
   pool:
     vmImage: 'Windows-2019'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-windows.yml
-  - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-    displayName: 'Sample Configuration:CloudFoundry'
+  - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
+    displayName: 'Sample Configuration:SimpleCloudFoundry'
   - template: templates/publish-results.yml
 
-- job: Configuration_CloudFoundry_DotNet22_Linux
+- job: Configuration_SimpleCloudFoundry_DotNet22_Linux
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-linux.yml
-  - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-    displayName: 'Sample Configuration:CloudFoundry'
+  - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
+    displayName: 'Sample Configuration:SimpleCloudFoundry'
   - template: templates/publish-results.yml
 
-- job: Configuration_CloudFoundry_DotNet22_OSX
+- job: Configuration_SimpleCloudFoundry_DotNet22_OSX
   pool:
     vmImage: 'MacOS-10.14'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-osx.yml
-  - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-    displayName: 'Sample Configuration:CloudFoundry'
+  - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
+    displayName: 'Sample Configuration:SimpleCloudFoundry'
   - template: templates/publish-results.yml
-
-# Configuration:Simple
-
-- job: Configuration_Simple_DotNet22_Windows
-  pool:
-    vmImage: 'Windows-2019'
-  steps:
-  - template: templates/setup-behave.yml
-  - template: templates/setup-dotnet2.2.yml
-  - template: templates/setup-java8.yml
-  - script: behave Configuration/src/AspDotNetCore/Simple
-    displayName: 'Test Configuration:Simple'
-
-- job: Configuration_Simple_DotNet22_Linux
-  pool:
-    vmImage: 'Ubuntu-16.04'
-  steps:
-  - template: templates/setup-behave.yml
-  - template: templates/setup-dotnet2.2.yml
-  - template: templates/setup-java8.yml
-  - script: behave Configuration/src/AspDotNetCore/Simple
-
-- job: Configuration_Simple_DotNet22_OSX
-  pool:
-    vmImage: 'MacOS-10.14'
-  steps:
-  - template: templates/setup-behave.yml
-  - template: templates/setup-dotnet2.2.yml
-  - template: templates/setup-java8.yml
-  - script: behave Configuration/src/AspDotNetCore/Simple
