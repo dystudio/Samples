@@ -41,16 +41,6 @@ jobs:
   - template: templates/publish-results.yml
 
     #
-# - job: Configuration_CloudFoundry_DotNet22_Windows
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Sample Configuration:CloudFoundry'
-#   - template: templates/publish-results.yml
 
 # - job: Configuration_CloudFoundry_DotNet22_Linux
 #   pool:
@@ -74,17 +64,17 @@ jobs:
 #     displayName: 'Sample Configuration:CloudFoundry'
 #   - template: templates/publish-results.yml
 
-
-# - job: Configuration_Simple_DotNet22_Windows
+# - job: Configuration_CloudFoundry_DotNet22_Windows
 #   pool:
 #     vmImage: 'Windows-2019'
 #   steps:
 #   - template: templates/setup-behave.yml
 #   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-java8.yml
-#   - script: behave Configuration/src/AspDotNetCore/Simple
-#     displayName: 'Test Configuration:Simple'
+#   - template: templates/setup-cloudfoundry-windows.yml
+#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+#     displayName: 'Sample Configuration:CloudFoundry'
 #   - template: templates/publish-results.yml
+
 
 # - job: Configuration_Simple_DotNet22_Linux
 #   pool:
@@ -108,17 +98,17 @@ jobs:
 #     displayName: 'Test Configuration:Simple'
 #   - template: templates/publish-results.yml
 
-
-# - job: Configuration_SimpleCloudFoundry_DotNet22_Windows
+# - job: Configuration_Simple_DotNet22_Windows
 #   pool:
 #     vmImage: 'Windows-2019'
 #   steps:
 #   - template: templates/setup-behave.yml
 #   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
-#     displayName: 'Sample Configuration:SimpleCloudFoundry'
+#   - template: templates/setup-java8.yml
+#   - script: behave Configuration/src/AspDotNetCore/Simple
+#     displayName: 'Test Configuration:Simple'
 #   - template: templates/publish-results.yml
+
 
 # - job: Configuration_SimpleCloudFoundry_DotNet22_Linux
 #   pool:
@@ -140,3 +130,14 @@ jobs:
 #   - template: templates/setup-cloudfoundry-osx.yml
 #   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
 #     displayName: 'Sample Configuration:SimpleCloudFoundry'
+
+# - job: Configuration_SimpleCloudFoundry_DotNet22_Windows
+#   pool:
+#     vmImage: 'Windows-2019'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-windows.yml
+#   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
+#     displayName: 'Sample Configuration:SimpleCloudFoundry'
+#   - template: templates/publish-results.yml
