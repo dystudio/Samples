@@ -1,4 +1,8 @@
 steps:
+- script: choco install cloudfoundry-cli
+  displayName: Setup CloudFoundry CLI
+- script: cf --version
+  displayName: CloudFoundry CLI Version
 - powershell: |
     Set-Content user.ini "[behave.userdata]"
     Add-Content user.ini "cf_apiurl = $Env:STEELTOE_CF_APIURL"
