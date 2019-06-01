@@ -21,9 +21,11 @@ jobs:
       Write-Host "[behave.userdata]"
       Write-Host "cf_apiurl = api.run.pcfone.io"
       Write-Host "cf_org = group-steeltoe"
-      Write-Host "cf_username ="
+      Write-Host "cf_username = $Env.STEELTOE_CF_USERNAME"
       Write-Host "cf_password ="
       Write-Host "cf_max_attempts = "
+    env:
+      CF_STEELTOE_USERNAME: $(steeltoe.cf.username)
     # Add-Content behave.ini "[behave.userdata]
     # Add-Content behave.ini "cf_apiurl = api.run.pcfone.io
     # Add-Content behave.ini "cf_org = group-steeltoe
