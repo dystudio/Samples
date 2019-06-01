@@ -24,6 +24,12 @@ jobs:
       Write-Host "cf_username = $Env:STEELTOE_CF_USERNAME"
       Write-Host "cf_password =$Env:STEELTOE_CF_PASSWORD"
       Write-Host "cf_max_attempts = $Env:STEELTOE_CF_MAX_ATTEMPTS"
+      Add-Content user.ini "[behave.userdata]"
+      Add-Content user.ini "cf_apiurl = $Env:STEELTOE_CF_APIURL"
+      Add-Content user.ini "cf_org = $Env:STEELTOE_CF_ORG"
+      Add-Content user.ini "cf_username = $Env:STEELTOE_CF_USERNAME"
+      Add-Content user.ini "cf_max_attempts = $Env:STEELTOE_CF_MAX_ATTEMPTS"
+      Get-Content user.ini
     env:
       CF_STEELTOE_USERNAME: $(steeltoe.cf.username)
     # Add-Content behave.ini "[behave.userdata]
