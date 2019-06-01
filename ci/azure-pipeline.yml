@@ -17,10 +17,19 @@ jobs:
   # - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     # displayName: 'Sample Configuration:CloudFoundry'
   # - template: templates/publish-results.yml
-  - powershell: Write-Host "Creds are $Env:STEELTOE_PCF_CREDENTIALS"
-    env:
-      STEELTOE_PCF_CREDENTIALS: $(steeltoe.credentials.pcf)
-    condition: always()
+  - powershell: |
+      Write-Host "[behave.userdata]"
+      Write-Host "cf_apiurl = api.run.pcfone.io"
+      Write-Host "cf_org = group-steeltoe"
+      Write-Host "cf_username ="
+      Write-Host "cf_password ="
+      Write-Host "cf_max_attempts = "
+    # Add-Content behave.ini "[behave.userdata]
+    # Add-Content behave.ini "cf_apiurl = api.run.pcfone.io
+    # Add-Content behave.ini "cf_org = group-steeltoe
+    # Add-Content behave.ini "cf_username =
+    # Add-Content behave.ini "cf_password =
+    # Add-Content behave.ini "cf_max_attempts = "
 
 # Configuration:Simple
 
