@@ -30,8 +30,6 @@ jobs:
       Add-Content user.ini "cf_username = $Env:STEELTOE_CF_USERNAME"
       Add-Content user.ini "cf_max_attempts = $Env:STEELTOE_CF_MAX_ATTEMPTS"
       Get-Content user.ini
-    env:
-      CF_STEELTOE_USERNAME: $(steeltoe.cf.username)
     # Add-Content behave.ini "[behave.userdata]
     # Add-Content behave.ini "cf_apiurl = api.run.pcfone.io
     # Add-Content behave.ini "cf_org = group-steeltoe
