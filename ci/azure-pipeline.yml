@@ -18,6 +18,8 @@ jobs:
     # displayName: 'Sample Configuration:CloudFoundry'
   # - template: templates/publish-results.yml
   - powershell: Write-Host "Creds are $Env:STEELTOE_PCF_CREDENTIALS"
+    env:
+      STEELTOE_PCF_CREDENTIALS: $(STEELTOE_PCF_CREDENTIALS)
     condition: always()
 
 # Configuration:Simple
