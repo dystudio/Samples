@@ -17,6 +17,7 @@ jobs:
   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     displayName: 'Sample Configuration:CloudFoundry'
   - template: templates/publish-results.yml
+  - powershell: echo $env:STEELTOE_PCF_CREDENTIALS
 
 # Configuration:Simple
 
