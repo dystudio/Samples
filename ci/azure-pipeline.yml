@@ -19,9 +19,9 @@ jobs:
   # - template: templates/publish-results.yml
   - powershell: |
       Write-Host "[behave.userdata]"
-      Write-Host "cf_apiurl = api.run.pcfone.io"
-      Write-Host "cf_org = group-steeltoe"
-      Write-Host "cf_username = ${Env.STEELTOE_CF_USERNAME}"
+      Write-Host "cf_apiurl = "
+      Write-Host "cf_org = "
+      Write-Host "cf_username = $Env:STEELTOE_CF_USERNAME"
       Write-Host "cf_password ="
       Write-Host "cf_max_attempts = "
     env:
