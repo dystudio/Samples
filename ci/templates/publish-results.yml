@@ -4,3 +4,4 @@ steps:
   inputs:
     testResultsFormat: JUnit
     testResultsFiles: test.out/reports/TESTS-*.xml
+  displayName: 'Publish Test Results'

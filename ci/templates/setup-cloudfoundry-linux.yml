@@ -1,5 +1,11 @@
 steps:
 - bash: |
+    wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+    echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+    apt-get update
+    apt-get install cf-cli
+  displayName: 'Setup Cloud Foundry CLI'
+- bash: |
     cat > user.ini << EOF
     [behave.userdata]
     cf_apiurl = $STEELTOE_CF_APIURL
@@ -12,4 +18,4 @@ steps:
   env:
     STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
     STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Setup Behave Credentials'
+  displayName: 'Setup Cloud Foundry Environment'

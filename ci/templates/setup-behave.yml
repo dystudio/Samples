@@ -6,6 +6,6 @@ steps:
 - script: python --version
   displayName: 'Python Version'
 - script: python -m pip install -r pyenv.pkgs
-  displayName: 'Setup Behave Environment'
+  displayName: 'Setup Behave'
 - script: behave --version
   displayName: 'Behave Version'

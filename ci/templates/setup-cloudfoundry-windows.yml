@@ -1,8 +1,8 @@
 steps:
 - script: choco install cloudfoundry-cli
-  displayName: Setup CloudFoundry CLI
+  displayName: 'Setup Cloud Foundry CLI'
 - script: cf --version
-  displayName: CloudFoundry CLI Version
+  displayName: 'Cloud Foundry CLI Version'
 - powershell: |
     Set-Content user.ini "[behave.userdata]"
     Add-Content user.ini "cf_apiurl = $Env:STEELTOE_CF_APIURL"
@@ -14,4 +14,4 @@ steps:
   env:
     STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
     STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Setup Behave Credentials'
+  displayName: 'Setup Cloud Foundry Environment'
