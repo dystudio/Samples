@@ -11,13 +11,13 @@ jobs:
   pool:
     vmImage: 'Windows-2019'
   steps:
-  - template: templates/setup-behave.yml
-  - template: templates/setup-dotnet2.2.yml
-  - template: templates/setup-cloudfoundry.yml
-  - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-    displayName: 'Sample Configuration:CloudFoundry'
-  - template: templates/publish-results.yml
-  - powershell: echo $env:STEELTOE_PCF_CREDENTIALS
+  # - template: templates/setup-behave.yml
+  # - template: templates/setup-dotnet2.2.yml
+  # - template: templates/setup-cloudfoundry.yml
+  # - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+    # displayName: 'Sample Configuration:CloudFoundry'
+  # - template: templates/publish-results.yml
+  - powershell: Write-Host "Creds are $Env:STEELTOE_PCF_CREDENTIALS"
     condition: always()
 
 # Configuration:Simple
