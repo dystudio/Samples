@@ -18,13 +18,24 @@ jobs:
 #     displayName: 'Sample Configuration:CloudFoundry'
 #   - template: templates/publish-results.yml
 
-- job: Configuration_CloudFoundry_DotNet22_Linux
+# - job: Configuration_CloudFoundry_DotNet22_Linux
+#   pool:
+#     vmImage: 'Ubuntu-16.04'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-linux.yml
+#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+#     displayName: 'Sample Configuration:CloudFoundry'
+#   - template: templates/publish-results.yml
+
+- job: Configuration_CloudFoundry_DotNet22_OSX
   pool:
-    vmImage: 'Ubuntu-16.04'
+    vmImage: 'MacOS-10.14'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
-  - template: templates/setup-cloudfoundry-linux.yml
+  - template: templates/setup-cloudfoundry-osx.yml
   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     displayName: 'Sample Configuration:CloudFoundry'
   - template: templates/publish-results.yml

@@ -3,7 +3,7 @@ steps:
   displayName: 'Setup Cloud Foundry CLI'
 - script: cf --version
   displayName: 'Cloud Foundry CLI Version'
-- powershell: |
+- script: |
     Set-Content user.ini "[behave.userdata]"
     Add-Content user.ini "cf_apiurl = $Env:STEELTOE_CF_APIURL"
     Add-Content user.ini "cf_org = $Env:STEELTOE_CF_ORG"
@@ -14,4 +14,4 @@ steps:
   env:
     STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
     STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Setup Cloud Foundry Environment'
+  displayName: 'Setup Cloud Foundry Behave Environment'
