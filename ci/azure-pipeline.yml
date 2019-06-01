@@ -7,40 +7,73 @@ trigger:
 
 jobs:
 
-- job: Connectors_PostgreSQL_DotNet22_Linux
+# - job: Connectors_PostgreSql_DotNet22_Linux
+#   pool:
+#     vmImage: 'Ubuntu-16.04'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-linux.yml
+#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
+#     displayName: 'Sample Connectors:PostgreSql'
+#   - template: templates/publish-results.yml
+
+# - job: Connectors_PostgreSql_DotNet22_OSX
+#   pool:
+#     vmImage: 'MacOS-10.14'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-osx.yml
+#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
+#     displayName: 'Sample Connectors:PostgreSql'
+#   - template: templates/publish-results.yml
+
+# - job: Connectors_PostgreSql_DotNet22_Windows
+#   pool:
+#     vmImage: 'Windows-2019'
+#   steps:
+#   - template: templates/setup-behave.yml
+#   - template: templates/setup-dotnet2.2.yml
+#   - template: templates/setup-cloudfoundry-windows.yml
+#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
+#     displayName: 'Sample Connectors:PostgreSql'
+#   - template: templates/publish-results.yml
+
+
+- job: Connectors_PostgreEFCore_DotNet22_Linux
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-linux.yml
-  - script: behave Connectors/src/AspDotNetCore/PostgreSql
-    displayName: 'Sample Connectors:PostgreSQL'
+  - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
+    displayName: 'Sample Connectors:PostgreEFCore'
   - template: templates/publish-results.yml
 
-- job: Connectors_PostgreSQL_DotNet22_OSX
+- job: Connectors_PostgreEFCore_DotNet22_OSX
   pool:
     vmImage: 'MacOS-10.14'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-osx.yml
-  - script: behave Connectors/src/AspDotNetCore/PostgreSql
-    displayName: 'Sample Connectors:PostgreSQL'
+  - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
+    displayName: 'Sample Connectors:PostgreEFCore'
   - template: templates/publish-results.yml
 
-- job: Connectors_PostgreSQL_DotNet22_Windows
+- job: Connectors_PostgreEFCore_DotNet22_Windows
   pool:
     vmImage: 'Windows-2019'
   steps:
   - template: templates/setup-behave.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry-windows.yml
-  - script: behave Connectors/src/AspDotNetCore/PostgreSql
-    displayName: 'Sample Connectors:PostgreSQL'
+  - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
+    displayName: 'Sample Connectors:PostgreEFCore'
   - template: templates/publish-results.yml
 
-    #
 
 # - job: Configuration_CloudFoundry_DotNet22_Linux
 #   pool:
