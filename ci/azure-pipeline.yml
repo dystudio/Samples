@@ -11,31 +11,19 @@ jobs:
   pool:
     vmImage: 'Windows-2019'
   steps:
-  # - template: templates/setup-behave.yml
-  # - template: templates/setup-dotnet2.2.yml
-  # - template: templates/setup-cloudfoundry.yml
-  # - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-    # displayName: 'Sample Configuration:CloudFoundry'
-  # - template: templates/publish-results.yml
+  - template: templates/setup-behave.yml
   - powershell: |
-      Write-Host "[behave.userdata]"
-      Write-Host "cf_apiurl = $Env:STEELTOE_CF_APIURL"
-      Write-Host "cf_org = $Env:STEELTOE_CF_ORG"
-      Write-Host "cf_username = $Env:STEELTOE_CF_USERNAME"
-      Write-Host "cf_password =$Env:STEELTOE_CF_PASSWORD"
-      Write-Host "cf_max_attempts = $Env:STEELTOE_CF_MAX_ATTEMPTS"
-      Add-Content user.ini "[behave.userdata]"
+      Set-Content user.ini "[behave.userdata]"
       Add-Content user.ini "cf_apiurl = $Env:STEELTOE_CF_APIURL"
       Add-Content user.ini "cf_org = $Env:STEELTOE_CF_ORG"
       Add-Content user.ini "cf_username = $Env:STEELTOE_CF_USERNAME"
       Add-Content user.ini "cf_max_attempts = $Env:STEELTOE_CF_MAX_ATTEMPTS"
       Get-Content user.ini
-    # Add-Content behave.ini "[behave.userdata]
-    # Add-Content behave.ini "cf_apiurl = api.run.pcfone.io
-    # Add-Content behave.ini "cf_org = group-steeltoe
-    # Add-Content behave.ini "cf_username =
-    # Add-Content behave.ini "cf_password =
-    # Add-Content behave.ini "cf_max_attempts = "
+  - template: templates/setup-dotnet2.2.yml
+  - template: templates/setup-cloudfoundry.yml
+  - script: behave Configuration/src/AspDotNetCore/CloudFoundry
+    displayName: 'Sample Configuration:CloudFoundry'
+  - template: templates/publish-results.yml
 
 # Configuration:Simple
 
