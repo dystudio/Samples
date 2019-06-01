@@ -12,9 +12,9 @@ jobs:
     vmImage: 'Windows-2019'
   steps:
   - template: templates/setup-behave.yml
-  - template: templates/setup-behave-credentials-windows.yml
   - template: templates/setup-dotnet2.2.yml
   - template: templates/setup-cloudfoundry.yml
+  - template: templates/setup-cloudfoundrt-credentials-windows.yml
   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
     displayName: 'Sample Configuration:CloudFoundry'
   - template: templates/publish-results.yml
