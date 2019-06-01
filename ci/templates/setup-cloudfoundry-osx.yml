@@ -5,7 +5,7 @@ steps:
   displayName: 'Setup Cloud Foundry CLI'
 - script: cf --version
   displayName: 'Cloud Foundry CLI Version'
-- script: |
+- bash: |
     cat > user.ini << EOF
     [behave.userdata]
     cf_apiurl = $STEELTOE_CF_APIURL
