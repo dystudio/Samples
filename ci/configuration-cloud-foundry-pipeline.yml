@@ -1,3 +1,4 @@
+name: 'Samples: Configuration/CloudFoundry'
 trigger:
 - devops-spike
 jobs:
