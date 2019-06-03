@@ -23,7 +23,7 @@ jobs:
   steps:
   - template: setup-behave.yml
   - template: setup-dotnet2.yml
-  - template: setup-cloudfoundry-linux.yml
+  - template: setup-cloudfoundry-osx.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results.yml
@@ -35,7 +35,7 @@ jobs:
   steps:
   - template: setup-behave.yml
   - template: setup-dotnet2.yml
-  - template: setup-cloudfoundry-linux.yml
+  - template: setup-cloudfoundry-windows.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results.yml
