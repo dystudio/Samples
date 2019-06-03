@@ -7,9 +7,9 @@ jobs:
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
-  - template: templates/setup-behave.yml
-  - template: templates/setup-dotnet${{dotnetVersion}}.yml
-  - template: templates/setup-cloudfoundry-linux.yml
+  - template: setup-behave.yml
+  - template: setup-dotnet${{dotnetVersion}}.yml
+  - template: setup-cloudfoundry-linux.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: '${{parameters.group}}: ${{parameters.sample}}'
-  - template: templates/publish-results.yml
+  - template: publish-results.yml
