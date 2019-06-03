@@ -1,0 +1,15 @@
+parameters:
+  group: ''
+  sample: ''
+  dotnetVersion: ''
+jobs:
+- job: '${{group}}: ${{sample}} (DotNet ${{dotnetVersion}}/Linux)'
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  steps:
+  - template: templates/setup-behave.yml
+  - template: templates/setup-dotnet${{dotnetVersion}}.yml
+  - template: templates/setup-cloudfoundry-linux.yml
+  - script: behave ${{group}}/src/AspDotNetCore/${{sample}}
+    displayName: '${{group}}: ${{sample}}'
+  - template: templates/publish-results.yml
