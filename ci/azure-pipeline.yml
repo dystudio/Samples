@@ -12,278 +12,62 @@ jobs:
     group: Configuration
     sample: CloudFoundry
 
-  # # ---------------------------------------------------------------------------
-  # # Configuration: Simple
-  # # ---------------------------------------------------------------------------
+# - template: templates/cloud-foundry.yml
+#   parameters:
+#     group: Configuration
+#     sample: Simple
 
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: Simple
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Configuration
+    sample: SimpleCloudFoundry
 
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: Simple
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: MySql
 
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: Simple
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEF6
 
-# # - job: Configuration_Simple_DotNet22_Windows
-# #   displayName: 'Configuration: Simple (DotNet 2.2/Windows)'
-# #   pool:
-# #     vmImage: 'Windows-2019'
-# #   steps:
-# #   - template: templates/setup-behave.yml
-# #   - template: templates/setup-dotnet2.2.yml
-# #   - template: templates/setup-java8.yml
-# #   - script: behave Configuration/src/AspDotNetCore/Simple
-# #     displayName: 'Configuration: Simple'
-# #   - template: templates/publish-results.yml
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEFCore
 
-  # # ---------------------------------------------------------------------------
-  # # Configuration: SimpleCloudFoundry
-  # # ---------------------------------------------------------------------------
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: PostgreSql
 
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: SimpleCloudFoundry
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: PostgreEFCore
 
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: SimpleCloudFoundry
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: RabbitMQ
 
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Configuration
-  #   sample: SimpleCloudFoundry
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: Redis
 
-  # # ---------------------------------------------------------------------------
-  # # Connectors: MySql
-  # # ---------------------------------------------------------------------------
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Connectors
+    sample: SqlServerEFCore
 
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySql
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Management
+    sample: CloudFoundry
 
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySql
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySql
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: MySqlEF6
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEF6
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEF6
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEF6
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: MySqlEFCore
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: MySqlEFCore
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: PostgreSql
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreSql
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreSql
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreSql
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: PostgreEFCore
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: PostgreEFCore
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: RabbitMQ
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: RabbitMQ
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: RabbitMQ
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: RabbitMQ
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: Redis
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: Redis
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: Redis
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: Redis
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Connectors: SqlServerEFCore
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: SqlServerEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: SqlServerEFCore
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Connectors
-  #   sample: SqlServerEFCore
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Management: CloudFoundry
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Management
-  #   sample: CloudFoundry
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Management
-  #   sample: CloudFoundry
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Management
-  #   sample: CloudFoundry
-  #   dotnetVersion: 2.2
-
-  # # ---------------------------------------------------------------------------
-  # # Security: CloudFoundrySingleSignon
-  # # ---------------------------------------------------------------------------
-
-# - template: templates/cloud-foundry-linux.yml
-  # parameters:
-  #   group: Security
-  #   sample: CloudFoundrySingleSignon
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-osx.yml
-  # parameters:
-  #   group: Security
-  #   sample: CloudFoundrySingleSignon
-  #   dotnetVersion: 2.2
-
-# - template: templates/cloud-foundry-windows.yml
-  # parameters:
-  #   group: Security
-  #   sample: CloudFoundrySingleSignon
-  #   dotnetVersion: 2.2
+- template: templates/cloud-foundry.yml
+  parameters:
+    group: Security
+    sample: CloudFoundrySingleSignon
