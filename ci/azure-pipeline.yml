@@ -17,17 +17,17 @@ jobs:
     sample: CloudFoundry
     dotnetVersion: 2.2
 
-# - template: templates/cloud-foundry-osx.yml
-#   parameters:
-#     group: Configuration
-#     sample: CloudFoundry
-#     dotnetVersion: 2.2
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Configuration
+    sample: CloudFoundry
+    dotnetVersion: 2.2
 
-# - template: templates/cloud-foundry-windows.yml
-#   parameters:
-#     group: Configuration
-#     sample: CloudFoundry
-#     dotnetVersion: 2.2
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Configuration
+    sample: CloudFoundry
+    dotnetVersion: 2.2
 
 # - job: Configuration_CloudFoundry_DotNet22_OSX
 #   displayName: 'Configuration: CloudFoundry (DotNet 2.2/OSX)'
