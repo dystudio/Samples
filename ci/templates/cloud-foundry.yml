@@ -1,38 +1,40 @@
 parameters:
   group: ''
   sample: ''
-  dotnetVersion: ''
 
 jobs:
+
 - job: ${{parameters.group}}_${{parameters.sample}}_Linux
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Linux)'
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet 2.2/Linux)'
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
   - template: setup-behave.yml
-  - template: setup-dotnet${{parameters.dotnetVersion}}.yml
+  - template: setup-dotnet2.2.yml
   - template: setup-cloudfoundry-linux.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results.yml
+
 - job: ${{parameters.group}}_${{parameters.sample}}_OSX
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/OSX)'
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet 2.2/OSX)'
   pool:
     vmImage: 'MacOS-10.14'
   steps:
   - template: setup-behave.yml
-  - template: setup-dotnet${{parameters.dotnetVersion}}.yml
+  - template: setup-dotnet2.2.yml
   - template: setup-cloudfoundry-linux.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results.yml
+
 - job: ${{parameters.group}}_${{parameters.sample}}_Windows
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Windows)'
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet 2.2/Windows)'
   pool:
     vmImage: 'Windows-2019'
   steps:
   - template: setup-behave.yml
-  - template: setup-dotnet${{parameters.dotnetVersion}}.yml
+  - template: setup-dotnet2.2.yml
   - template: setup-cloudfoundry-linux.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
