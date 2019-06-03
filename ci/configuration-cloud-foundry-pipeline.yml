@@ -1,8 +1,8 @@
 name: 'Samples: Configuration/CloudFoundry'
 trigger:
 - devops-spike
-paths:
-  include: templates/cloud-foundry-job.yml
+  paths:
+    include: templates/cloud-foundry-job.yml
 jobs:
 - template: templates/cloud-foundry-job.yml
   parameters:
