@@ -1,8 +1,0 @@
-steps:
-- task: UseDotNet@2
-  displayName: 'Setup DotNet 2.2.x'
-  inputs:
-    packageType: sdk
-    version: 2.2.x
-- script: dotnet --version
-  displayName: 'DotNet Version'

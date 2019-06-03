@@ -1,0 +1,11 @@
+parameters:
+  minorVersion: '2'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Setup DotNet 2.${{parameters.minorVersion}}.x'
+  inputs:
+    packageType: sdk
+    version: 2.${{parameters.minorVersion}}.x
+- script: dotnet --version
+  displayName: 'DotNet Version'
