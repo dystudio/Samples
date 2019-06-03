@@ -9,11 +9,9 @@ jobs:
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
-  - template: setup-behave-steps.yml
-  - template: configure-behave-linux-steps.yml
+  - template: setup-behave-linux-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-cloud-foundry-linux-steps.yml
-  - template: configure-cloud-foundry-linux-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
@@ -23,11 +21,9 @@ jobs:
   pool:
     vmImage: 'MacOS-10.14'
   steps:
-  - template: setup-behave-steps.yml
-  - template: configure-behave-osx-steps.yml
+  - template: setup-behave-osx-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-cloud-foundry-osx-steps.yml
-  - template: configure-cloud-foundry-osx-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
@@ -37,11 +33,9 @@ jobs:
   pool:
     vmImage: 'Windows-2019'
   steps:
-  - template: setup-behave-steps.yml
-  - template: configure-behave-windows-steps.yml
+  - template: setup-behave-windows-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-cloud-foundry-windows-steps.yml
-  - template: configure-cloud-foundry-windows-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml

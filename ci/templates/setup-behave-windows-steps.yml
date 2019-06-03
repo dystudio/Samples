@@ -1,0 +1,3 @@
+steps:
+- template: setup-behave-steps.yml
+- template: configure-behave-windows-steps.yml
