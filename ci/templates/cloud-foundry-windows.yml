@@ -4,10 +4,10 @@ parameters:
   os: ''
   dotnetVersion: ''
 jobs:
-- job: ${{parameters.group}}_${{parameters.sample}}_Linux
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Linux)'
+- job: ${{parameters.group}}_${{parameters.sample}}_Windows
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Windows)'
   pool:
-    vmImage: 'Ubuntu-16.04'
+    vmImage: 'Windows-2019'
   steps:
   - template: setup-behave.yml
   - template: setup-dotnet${{parameters.dotnetVersion}}.yml
