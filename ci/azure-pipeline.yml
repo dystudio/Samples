@@ -7,67 +7,67 @@ trigger:
 
 jobs:
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Configuration
-    sample: CloudFoundry
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Configuration
+#     sample: CloudFoundry
 
 - template: templates/java-job.yml
   parameters:
     group: Configuration
     sample: Simple
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Configuration
-    sample: SimpleCloudFoundry
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Configuration
+#     sample: SimpleCloudFoundry
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: MySql
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: MySql
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: MySqlEF6
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: MySqlEF6
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: MySqlEFCore
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: MySqlEFCore
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: PostgreSql
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: PostgreSql
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: PostgreEFCore
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: PostgreEFCore
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: RabbitMQ
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: RabbitMQ
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: Redis
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: Redis
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Connectors
-    sample: SqlServerEFCore
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Connectors
+#     sample: SqlServerEFCore
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Management
-    sample: CloudFoundry
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Management
+#     sample: CloudFoundry
 
-- template: templates/cloud-foundry-job.yml
-  parameters:
-    group: Security
-    sample: CloudFoundrySingleSignon
+# - template: templates/cloud-foundry-job.yml
+#   parameters:
+#     group: Security
+#     sample: CloudFoundrySingleSignon
