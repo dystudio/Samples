@@ -1,11 +1,11 @@
 steps:
 - task: UsePythonVersion@0
-  displayName: 'Setup Python'
+  displayName: Setup Python
   inputs:
     versionSpec: 3.6.x
 - script: python --version
-  displayName: 'Python Version'
+  displayName: Python Version
 - script: python -m pip install -r pyenv.pkgs
-  displayName: 'Setup Behave'
+  displayName: Setup Behave
 - script: behave --version
-  displayName: 'Behave Version'
+  displayName: Behave Version

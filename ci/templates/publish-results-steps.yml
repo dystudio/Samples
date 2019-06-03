@@ -4,7 +4,7 @@ steps:
   inputs:
     testResultsFormat: JUnit
     testResultsFiles: test.out/reports/TESTS-*.xml
-  displayName: 'Publish Test Results'
+  displayName: Publish Test Results
 - task: PublishBuildArtifacts@1
   condition: always()
   inputs:
