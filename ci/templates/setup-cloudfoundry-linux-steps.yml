@@ -7,17 +7,4 @@ steps:
   displayName: 'Setup Cloud Foundry CLI'
 - script: cf --version
   displayName: 'Cloud Foundry CLI Version'
-- bash: |
-    cat > user.ini << EOF
-    [behave.userdata]
-    cf_apiurl = $STEELTOE_CF_APIURL
-    cf_org = $STEELTOE_CF_ORG
-    cf_username = $STEELTOE_CF_USERNAME
-    cf_password = $STEELTOE_CF_PASSWORD
-    cf_max_attempts = $STEELTOE_CF_MAX_ATTEMPTS
-    EOF
-    cat user.ini
-  env:
-    STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
-    STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Setup Cloud Foundry Behave Environment'
+- template: configure-cloudfoundry-linux-steps.yml

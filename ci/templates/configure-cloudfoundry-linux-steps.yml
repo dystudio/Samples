@@ -1,0 +1,13 @@
+steps:
+- bash: |
+    cat >> user.ini << EOF
+    cf_apiurl = $STEELTOE_CF_APIURL
+    cf_org = $STEELTOE_CF_ORG
+    cf_username = $STEELTOE_CF_USERNAME
+    cf_password = $STEELTOE_CF_PASSWORD
+    cf_max_attempts = $STEELTOE_CF_MAX_ATTEMPTS
+    EOF
+  env:
+    STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
+    STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
+  displayName: 'Configure Cloud Foundry Environment'
