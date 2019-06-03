@@ -5,3 +5,14 @@ steps:
     testResultsFormat: JUnit
     testResultsFiles: test.out/reports/TESTS-*.xml
   displayName: 'Publish Test Results'
+- task: PublishBuildArtifacts@1
+  condition: always()
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: cukeLog
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: current
+    downloadType: single
+    downloadPath: $(System.ArtifactsDirectory)
+    artifactName: cukeLog
