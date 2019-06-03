@@ -11,7 +11,7 @@ jobs:
   steps:
   - template: setup-behave.yml
   - template: setup-dotnet${{parameters.dotnetVersion}}.yml
-  - template: setup-cloudfoundry-${{parameters.os}}.yml
+  - template: setup-cloudfoundry-windows.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results.yml
