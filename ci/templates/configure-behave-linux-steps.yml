@@ -2,5 +2,6 @@ steps:
 - bash: |
     cat > user.ini << EOF
     [behave.userdata]
+    max_attempts = $STEELTOE_MAX_ATTEMPTS
     EOF
   displayName: 'Configure Behave'

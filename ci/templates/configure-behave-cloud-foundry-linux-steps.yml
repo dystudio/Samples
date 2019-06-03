@@ -10,4 +10,4 @@ steps:
   env:
     STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
     STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Configure Cloud Foundry'
+  displayName: 'Configure Behave for Cloud Foundry'
