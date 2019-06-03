@@ -5,7 +5,7 @@ parameters:
 jobs:
 
 - job: ${{parameters.group}}_${{parameters.sample}}_Linux
-  displayName: ${{parameters.group}}: ${{parameters.sample}} (Linux)
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (Linux)'
   pool:
     vmImage: Ubuntu-16.04
   steps:
@@ -17,7 +17,7 @@ jobs:
   - template: publish-results-steps.yml
 
 - job: ${{parameters.group}}_${{parameters.sample}}_OSX
-  displayName: ${{parameters.group}}: ${{parameters.sample}} (OSX)
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (OSX)'
   pool:
     vmImage: MacOS-10.14
   steps:
@@ -29,7 +29,7 @@ jobs:
   - template: publish-results-steps.yml
 
 - job: ${{parameters.group}}_${{parameters.sample}}_Windows
-  displayName: ${{parameters.group}}: ${{parameters.sample}} (Windows)
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (Windows)'
   pool:
     vmImage: Windows-2019
   steps:
