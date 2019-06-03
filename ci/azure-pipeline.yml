@@ -2,8 +2,7 @@
 # SteeltoeOSS/Samples Azure DevOps pipeline
 # =============================================================================
 
-trigger:
-- devops-spike
+trigger: none
 
 jobs:
 
