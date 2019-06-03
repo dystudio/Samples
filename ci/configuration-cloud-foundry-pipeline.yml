@@ -1,0 +1,7 @@
+trigger:
+- devops-spike
+jobs:
+- template: templates/cloud-foundry-job.yml
+  parameters:
+    group: Configuration
+    sample: CloudFoundry
