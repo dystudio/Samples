@@ -9,7 +9,7 @@ jobs:
   pool:
     vmImage: Ubuntu-16.04
   steps:
-  - template: setup-behave-steps.yml
+  - template: setup-behave-linux-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
@@ -21,7 +21,7 @@ jobs:
   pool:
     vmImage: MacOS-10.14
   steps:
-  - template: setup-behave-steps.yml
+  - template: setup-behave-osx-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
@@ -33,7 +33,7 @@ jobs:
   pool:
     vmImage: Windows-2019
   steps:
-  - template: setup-behave-steps.yml
+  - template: setup-behave-windows-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
