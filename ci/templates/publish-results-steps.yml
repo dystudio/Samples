@@ -8,13 +8,13 @@ steps:
 - task: PublishBuildArtifacts@1
   condition: always()
   inputs:
-    pathtoPublish: $(Build.ArtifactStagingDirectory)
-    artifactName: cuke.log
+    pathtoPublish: cuke.log
+    artifactName: cukeLog
   displayName: 'Stage Cuke Log'
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: current
     downloadType: single
     downloadPath: $(System.ArtifactsDirectory)
-    artifactName: cuke.log
+    artifactName: cukeLog
   displayName: 'Publish Cuke Log'
