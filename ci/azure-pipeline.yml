@@ -36,7 +36,7 @@ jobs:
   - template: templates/publish-results.yml
 
 - job: Configuration_CloudFoundry_DotNet22_Windows
-    displayName: 'Configuration: CloudFoundry (DotNet 2.2/Windows)'
+  displayName: 'Configuration: CloudFoundry (DotNet 2.2/Windows)'
   pool:
     vmImage: 'Windows-2019'
   steps:
