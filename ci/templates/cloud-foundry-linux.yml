@@ -3,7 +3,8 @@ parameters:
   sample: ''
   dotnetVersion: ''
 jobs:
-- job: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Linux)'
+- job: ${{parameters.group}}_${{parameters.sample}}_Linux
+  displayName: '${{parameters.group}}: ${{parameters.sample}} (DotNet ${{parameters.dotnetVersion}}/Linux)'
   pool:
     vmImage: 'Ubuntu-16.04'
   steps:
