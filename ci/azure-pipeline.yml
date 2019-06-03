@@ -29,57 +29,27 @@ jobs:
     sample: CloudFoundry
     dotnetVersion: 2.2
 
-# - job: Configuration_CloudFoundry_DotNet22_OSX
-#   displayName: 'Configuration: CloudFoundry (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Configuration: CloudFoundry'
-#   - template: templates/publish-results.yml
+  # ---------------------------------------------------------------------------
+  # Configuration: Simple
+  # ---------------------------------------------------------------------------
 
-# - job: Configuration_CloudFoundry_DotNet22_Windows
-#   displayName: 'Configuration: CloudFoundry (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Configuration/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Configuration: CloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Configuration
+    sample: Simple
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Configuration: Simple
-#   # ---------------------------------------------------------------------------
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Configuration
+    sample: Simple
+    dotnetVersion: 2.2
 
-# - job: Configuration_Simple_DotNet22_Linux
-#   displayName: 'Configuration: Simple (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-java8.yml
-#   - script: behave Configuration/src/AspDotNetCore/Simple
-#     displayName: 'Configuration: Simple'
-#   - template: templates/publish-results.yml
-
-# - job: Configuration_Simple_DotNet22_OSX
-#   displayName: 'Configuration: Simple (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-java8.yml
-#   - script: behave Configuration/src/AspDotNetCore/Simple
-#     displayName: 'Configuration: Simple'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Configuration
+    sample: Simple
+    dotnetVersion: 2.2
 
 # - job: Configuration_Simple_DotNet22_Windows
 #   displayName: 'Configuration: Simple (DotNet 2.2/Windows)'
@@ -93,441 +63,244 @@ jobs:
 #     displayName: 'Configuration: Simple'
 #   - template: templates/publish-results.yml
 
-#   # ---------------------------------------------------------------------------
-#   # Configuration: SimpleCloudFoundry
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Configuration: SimpleCloudFoundry
+  # ---------------------------------------------------------------------------
 
-# - job: Configuration_SimpleCloudFoundry_DotNet22_Linux
-#   displayName: 'Configuration: SimpleCloudFoundry (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
-#     displayName: 'Configuration: SimpleCloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Configuration
+    sample: SimpleCloudFoundry
+    dotnetVersion: 2.2
 
-# - job: Configuration_SimpleCloudFoundry_DotNet22_OSX
-#   displayName: 'Configuration: SimpleCloudFoundry (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
-#     displayName: 'Configuration: SimpleCloudFoundry'
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Configuration
+    sample: SimpleCloudFoundry
+    dotnetVersion: 2.2
 
-# - job: Configuration_SimpleCloudFoundry_DotNet22_Windows
-#   displayName: 'Configuration: SimpleCloudFoundry (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Configuration/src/AspDotNetCore/SimpleCloudFoundry
-#     displayName: 'Configuration: SimpleCloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Configuration
+    sample: SimpleCloudFoundry
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: MySql
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: MySql
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_MySql_DotNet22_Linux
-#   displayName: 'Connectors: MySql (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySql
-#     displayName: 'Connectors: MySql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: MySql
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySql_DotNet22_OSX
-#   displayName: 'Connectors: MySql (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySql
-#     displayName: 'Connectors: MySql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: MySql
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySql_DotNet22_Windows
-#   displayName: 'Connectors: MySql (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySql
-#     displayName: 'Connectors: MySql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: MySql
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: MySqlEF6
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: MySqlEF6
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_MySqlEF6_DotNet22_Linux
-#   displayName: 'Connectors: MySqlEF6 (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEF6
-#     displayName: 'Connectors: MySqlEF6'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEF6
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySqlEF6_DotNet22_OSX
-#   displayName: 'Connectors: MySqlEF6 (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEF6
-#     displayName: 'Connectors: MySqlEF6'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEF6
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySqlEF6_DotNet22_Windows
-#   displayName: 'Connectors: MySqlEF6 (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEF6
-#     displayName: 'Connectors: MySqlEF6'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEF6
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: MySqlEFCore
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: MySqlEFCore
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_MySqlEFCore_DotNet22_Linux
-#   displayName: 'Connectors: MySqlEFCore (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEFCore
-#     displayName: 'Connectors: MySqlEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySqlEFCore_DotNet22_OSX
-#   displayName: 'Connectors: MySqlEFCore (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEFCore
-#     displayName: 'Connectors: MySqlEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_MySqlEFCore_DotNet22_Windows
-#   displayName: 'Connectors: MySqlEFCore (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/MySqlEFCore
-#     displayName: 'Connectors: MySqlEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: MySqlEFCore
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: PostgreSql
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: PostgreSql
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_PostgreSql_DotNet22_Linux
-#   displayName: 'Connectors: PostgreSql (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
-#     displayName: 'Connectors: PostgreSql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: PostgreSql
+    dotnetVersion: 2.2
 
-# - job: Connectors_PostgreSql_DotNet22_OSX
-#   displayName: 'Connectors: PostgreSql (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
-#     displayName: 'Connectors: PostgreSql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: PostgreSql
+    dotnetVersion: 2.2
 
-# - job: Connectors_PostgreSql_DotNet22_Windows
-#   displayName: 'Connectors: PostgreSql (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreSql
-#     displayName: 'Connectors: PostgreSql'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: PostgreSql
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: PostgreEFCore
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: PostgreEFCore
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_PostgreEFCore_DotNet22_Linux
-#   displayName: 'Connectors: PostgreEFCore (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
-#     displayName: 'Connectors: PostgreEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: PostgreEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_PostgreEFCore_DotNet22_OSX
-#   displayName: 'Connectors: PostgreEFCore (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
-#     displayName: 'Connectors: PostgreEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: PostgreEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_PostgreEFCore_DotNet22_Windows
-#   displayName: 'Connectors: PostgreEFCore (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/PostgreEFCore
-#     displayName: 'Connectors: PostgreEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: PostgreEFCore
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: RabbitMQ
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: RabbitMQ
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_RabbitMQ_DotNet22_Linux
-#   displayName: 'Connectors: RabbitMQ (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/RabbitMQ
-#     displayName: 'Connectors: RabbitMQ'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: RabbitMQ
+    dotnetVersion: 2.2
 
-# - job: Connectors_RabbitMQ_DotNet22_OSX
-#   displayName: 'Connectors: RabbitMQ (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/RabbitMQ
-#     displayName: 'Connectors: RabbitMQ'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: RabbitMQ
+    dotnetVersion: 2.2
 
-# - job: Connectors_RabbitMQ_DotNet22_Windows
-#   displayName: 'Connectors: RabbitMQ (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/RabbitMQ
-#     displayName: 'Connectors: RabbitMQ'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: RabbitMQ
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: Redis
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: Redis
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_Redis_DotNet22_Linux
-#   displayName: 'Connectors: Redis (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/Redis
-#     displayName: 'Connectors: Redis'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: Redis
+    dotnetVersion: 2.2
 
-# - job: Connectors_Redis_DotNet22_OSX
-#   displayName: 'Connectors: Redis (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/Redis
-#     displayName: 'Connectors: Redis'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: Redis
+    dotnetVersion: 2.2
 
-# - job: Connectors_Redis_DotNet22_Windows
-#   displayName: 'Connectors: Redis (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/Redis
-#     displayName: 'Connectors: Redis'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: Redis
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Connectors: SqlServerEFCore
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Connectors: SqlServerEFCore
+  # ---------------------------------------------------------------------------
 
-# - job: Connectors_SqlServerEFCore_DotNet22_Linux
-#   displayName: 'Connectors: SqlServerEFCore (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Connectors/src/AspDotNetCore/SqlServerEFCore
-#     displayName: 'Connectors: SqlServerEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Connectors
+    sample: SqlServerEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_SqlServerEFCore_DotNet22_OSX
-#   displayName: 'Connectors: SqlServerEFCore (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Connectors/src/AspDotNetCore/SqlServerEFCore
-#     displayName: 'Connectors: SqlServerEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Connectors
+    sample: SqlServerEFCore
+    dotnetVersion: 2.2
 
-# - job: Connectors_SqlServerEFCore_DotNet22_Windows
-#   displayName: 'Connectors: SqlServerEFCore (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Connectors/src/AspDotNetCore/SqlServerEFCore
-#     displayName: 'Connectors: SqlServerEFCore'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Connectors
+    sample: SqlServerEFCore
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Management: CloudFoundry
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Management: CloudFoundry
+  # ---------------------------------------------------------------------------
 
-# - job: Management_CloudFoundry_DotNet22_Linux
-#   displayName: 'Management: CloudFoundry (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Management/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Management: CloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Management
+    sample: CloudFoundry
+    dotnetVersion: 2.2
 
-# - job: Management_CloudFoundry_DotNet22_OSX
-#   displayName: 'Management: CloudFoundry (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Management/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Management: CloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Management
+    sample: CloudFoundry
+    dotnetVersion: 2.2
 
-# - job: Management_CloudFoundry_DotNet22_Windows
-#   displayName: 'Management: CloudFoundry (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Management/src/AspDotNetCore/CloudFoundry
-#     displayName: 'Management: CloudFoundry'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Management
+    sample: CloudFoundry
+    dotnetVersion: 2.2
 
-#   # ---------------------------------------------------------------------------
-#   # Security: CloudFoundrySingleSignon
-#   # ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Security: CloudFoundrySingleSignon
+  # ---------------------------------------------------------------------------
 
-# - job: Security_CloudFoundrySingleSignon_DotNet22_Linux
-#   displayName: 'Security: CloudFoundrySingleSignon (DotNet 2.2/Linux)'
-#   pool:
-#     vmImage: 'Ubuntu-16.04'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-linux.yml
-#   - script: behave Security/src/AspDotNetCore/CloudFoundrySingleSignon
-#     displayName: 'Security: CloudFoundrySingleSignon'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-linux.yml
+  parameters:
+    group: Security
+    sample: CloudFoundrySingleSignon
+    dotnetVersion: 2.2
 
-# - job: Security_CloudFoundrySingleSignon_DotNet22_OSX
-#   displayName: 'Security: CloudFoundrySingleSignon (DotNet 2.2/OSX)'
-#   pool:
-#     vmImage: 'MacOS-10.14'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-osx.yml
-#   - script: behave Security/src/AspDotNetCore/CloudFoundrySingleSignon
-#     displayName: 'Security: CloudFoundrySingleSignon'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-osx.yml
+  parameters:
+    group: Security
+    sample: CloudFoundrySingleSignon
+    dotnetVersion: 2.2
 
-# - job: Security_CloudFoundrySingleSignon_DotNet22_Windows
-#   displayName: 'Security: CloudFoundrySingleSignon (DotNet 2.2/Windows)'
-#   pool:
-#     vmImage: 'Windows-2019'
-#   steps:
-#   - template: templates/setup-behave.yml
-#   - template: templates/setup-dotnet2.2.yml
-#   - template: templates/setup-cloudfoundry-windows.yml
-#   - script: behave Security/src/AspDotNetCore/CloudFoundrySingleSignon
-#     displayName: 'Security: CloudFoundrySingleSignon'
-#   - template: templates/publish-results.yml
+- template: templates/cloud-foundry-windows.yml
+  parameters:
+    group: Security
+    sample: CloudFoundrySingleSignon
+    dotnetVersion: 2.2
