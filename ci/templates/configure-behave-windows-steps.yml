@@ -1,0 +1,4 @@
+steps:
+- powershell: |
+    Set-Content user.ini "[behave.userdata]"
+  displayName: 'Configure Behave'

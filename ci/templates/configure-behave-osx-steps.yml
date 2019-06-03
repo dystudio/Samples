@@ -1,0 +1,6 @@
+steps:
+- bash: |
+    cat > user.ini << EOF
+    [behave.userdata]
+    EOF
+  displayName: 'Configure Behave'
