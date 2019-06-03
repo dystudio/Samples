@@ -8,4 +8,4 @@ steps:
     packageType: sdk
     version: 2.${{parameters.minorVersion}}.x
 - script: dotnet --version
-  displayName: 'DotNet Version'
+  displayName: 'DotNet 2 Version'
