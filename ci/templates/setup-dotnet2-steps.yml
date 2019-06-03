@@ -3,9 +3,9 @@ parameters:
 
 steps:
 - task: UseDotNet@2
-  displayName: Setup DotNet 2
+  displayName: 'Setup DotNet 2'
   inputs:
     packageType: sdk
     version: 2.${{parameters.minorVersion}}.x
 - script: dotnet --version
-  displayName: DotNet 2 Version
+  displayName: 'DotNet 2 Version'

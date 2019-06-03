@@ -13,7 +13,7 @@ jobs:
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: Test -> ${{parameters.group}}: ${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
 
 - job: ${{parameters.group}}_${{parameters.sample}}_OSX
@@ -25,7 +25,7 @@ jobs:
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: Test -> ${{parameters.group}}: ${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
 
 - job: ${{parameters.group}}_${{parameters.sample}}_Windows
@@ -37,5 +37,5 @@ jobs:
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: Test -> ${{parameters.group}}: ${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml

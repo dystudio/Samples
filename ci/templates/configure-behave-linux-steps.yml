@@ -5,4 +5,4 @@ steps:
     max_attempts = $STEELTOE_MAX_ATTEMPTS
     EOF
     cat user.ini
-  displayName: Configure Behave
+  displayName: 'Configure Behave'
