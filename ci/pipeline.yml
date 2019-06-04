@@ -1,20 +1,14 @@
-# =============================================================================
-# SteeltoeOSS/Samples Azure DevOps pipeline
-# =============================================================================
-
 trigger: none
-
 jobs:
-
-# - template: templates/cloud-foundry-job.yml
-#   parameters:
-#     group: Configuration
-#     sample: CloudFoundry
-
-- template: templates/java-job.yml
+- template: templates/cloud-foundry-job.yml
   parameters:
-    group: Configuration
-    sample: Simple
+    feature: Configuration
+    sample: CloudFoundry
+
+# - template: templates/java-job.yml
+  # parameters:
+    # group: Configuration
+    # sample: Simple
 
 # - template: templates/cloud-foundry-job.yml
 #   parameters:
