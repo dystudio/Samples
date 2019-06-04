@@ -4,7 +4,7 @@ trigger:
     - devops-spike
   paths:
     include:
-    - ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
+    - Configuration/src/AspDotNetCore/CloudFoundry
 jobs:
 - template: templates/cloud-foundry-job.yml
   parameters:
