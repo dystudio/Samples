@@ -3,7 +3,8 @@ variables:
   steeltoe.cf.apiurl: api.run.pcfone.io
   steeltoe.cf.org: group-steeltoe
   steeltoe.cf.max.attempts: 250
-trigger: devops-spike
+trigger:
+ - devops-spike
 jobs:
 - template: templates/cloud-foundry-job.yml
   parameters:
