@@ -13,12 +13,12 @@ steps:
   condition: always()
   inputs:
     pathtoPublish: test.log
-    artifactName: ${{feature}}-${{sample}}-${{os}}-TestLog
+    artifactName: ${{parameters.feature}}-${{parameters.sample}}-${{parameters.os}}-TestLog
   displayName: 'Stage Test Log'
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: current
     downloadType: single
     downloadPath: $(System.ArtifactsDirectory)
-    artifactName: ${{feature}}-${{sample}}-${{os}}-TestLog
+    artifactName: ${{parameters.feature}}-${{parameters.sample}}-${{parameters.os}}-TestLog
   displayName: 'Publish Test Log'

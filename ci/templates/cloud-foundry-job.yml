@@ -14,8 +14,6 @@ jobs:
     displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
-      feature: ${{feature}}
-      group: ${{group}}
       os: Linux
 - job: ${{parameters.feature}}_${{parameters.sample}}_OSX
   displayName: '${{parameters.feature}}: ${{parameters.sample}} (OSX)'
@@ -29,8 +27,6 @@ jobs:
     displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
-      feature: ${{feature}}
-      group: ${{group}}
       os: OSX
 - job: ${{parameters.feature}}_${{parameters.sample}}_Windows
   displayName: '${{parameters.feature}}: ${{parameters.sample}} (Windows)'
@@ -44,6 +40,4 @@ jobs:
     displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
-      feature: ${{feature}}
-      group: ${{group}}
       os: Windows
