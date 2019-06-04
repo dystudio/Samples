@@ -1,5 +1,5 @@
 variables:
-  steeltoe.max.attempts = 120
+  steeltoe_max_attempts = 120
 trigger: none
 jobs:
 - template: templates/cloud-foundry-job.yml
