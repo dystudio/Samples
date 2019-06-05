@@ -15,6 +15,10 @@ jobs:
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
+    parameters:
+      feature: ${{parameters.feature}}
+      sample: ${{parameters.sample}}
+      os: Linux
 
 - job: ${{parameters.group}}_${{parameters.sample}}_OSX
   displayName: '${{parameters.group}}: ${{parameters.sample}} (OSX)'
@@ -27,6 +31,10 @@ jobs:
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
+    parameters:
+      feature: ${{parameters.feature}}
+      sample: ${{parameters.sample}}
+      os: OSX
 
 - job: ${{parameters.group}}_${{parameters.sample}}_Windows
   displayName: '${{parameters.group}}: ${{parameters.sample}} (Windows)'
@@ -39,3 +47,7 @@ jobs:
   - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
     displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
+    parameters:
+      feature: ${{parameters.feature}}
+      sample: ${{parameters.sample}}
+      os: Windows
