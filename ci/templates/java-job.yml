@@ -1,51 +1,51 @@
 parameters:
-  group: ''
+  feature: ''
   sample: ''
 
 jobs:
 
-- job: ${{parameters.group}}_${{parameters.sample}}_Linux
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (Linux)'
+- job: ${{parameters.feature}}_${{parameters.sample}}_Linux
+  displayName: '${{parameters.feature}}: ${{parameters.sample}} (Linux)'
   pool:
     vmImage: Ubuntu-16.04
   steps:
   - template: setup-behave-linux-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
-  - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
+  - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
       feature: ${{parameters.feature}}
       sample: ${{parameters.sample}}
       os: Linux
 
-- job: ${{parameters.group}}_${{parameters.sample}}_OSX
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (OSX)'
+- job: ${{parameters.feature}}_${{parameters.sample}}_OSX
+  displayName: '${{parameters.feature}}: ${{parameters.sample}} (OSX)'
   pool:
     vmImage: MacOS-10.14
   steps:
   - template: setup-behave-osx-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
-  - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
+  - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
       feature: ${{parameters.feature}}
       sample: ${{parameters.sample}}
       os: OSX
 
-- job: ${{parameters.group}}_${{parameters.sample}}_Windows
-  displayName: '${{parameters.group}}: ${{parameters.sample}} (Windows)'
+- job: ${{parameters.feature}}_${{parameters.sample}}_Windows
+  displayName: '${{parameters.feature}}: ${{parameters.sample}} (Windows)'
   pool:
     vmImage: Windows-2019
   steps:
   - template: setup-behave-windows-steps.yml
   - template: setup-dotnet2-steps.yml
   - template: setup-java8-steps.yml
-  - script: behave ${{parameters.group}}/src/AspDotNetCore/${{parameters.sample}}
-    displayName: 'Test -> ${{parameters.group}}: ${{parameters.sample}}'
+  - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
+    displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   - template: publish-results-steps.yml
     parameters:
       feature: ${{parameters.feature}}
