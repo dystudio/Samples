@@ -13,60 +13,60 @@ jobs:
 
 - template: templates/java-job.yml
   parameters:
-    group: Configuration
+    feature: Configuration
     sample: Simple
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Configuration
+    feature: Configuration
     sample: SimpleCloudFoundry
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: MySql
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: MySqlEF6
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: MySqlEFCore
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: PostgreSql
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: PostgreEFCore
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: RabbitMQ
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: Redis
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Connectors
+    feature: Connectors
     sample: SqlServerEFCore
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Management
+    feature: Management
     sample: CloudFoundry
 
 - template: templates/cloud-foundry-job.yml
   parameters:
-    group: Security
+    feature: Security
     sample: CloudFoundrySingleSignon
