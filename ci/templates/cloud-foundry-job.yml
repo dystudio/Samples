@@ -7,7 +7,7 @@ jobs:
   pool:
     vmImage: Ubuntu-16.04
   steps:
-  - template: setup-tools-linux-steps.yml
+  - template: setup-cloud-foundry-linux-steps.yml
   # - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
   #   displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   # - template: publish-results-steps.yml
@@ -20,7 +20,7 @@ jobs:
   pool:
     vmImage: MacOS-10.14
   steps:
-  - template: setup-tools-osx-steps.yml
+  - template: setup-cloud-foundry-osx-steps.yml
   # - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
   #   displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   # - template: publish-results-steps.yml
@@ -33,7 +33,7 @@ jobs:
   pool:
     vmImage: Windows-2019
   steps:
-  - template: setup-tools-windows-steps.yml
+  - template: setup-cloud-foundry-windows-steps.yml
   # - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
   #   displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   # - template: publish-results-steps.yml
