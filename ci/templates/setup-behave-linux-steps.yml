@@ -1,3 +1,0 @@
-steps:
-- template: setup-behave-steps.yml
-- template: configure-behave-linux-steps.yml
