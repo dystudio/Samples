@@ -26,7 +26,7 @@ steps:
   displayName: 'Setup Behave'
 - script: behave --version
   displayName: 'Behave Version'
-- script: gem install cf-uaac
+- script: gem install cf-uaac --platform ruby
   displayName: 'Setup UAAC'
 - script: uaac --version
   displayName: 'UAAC Version'
