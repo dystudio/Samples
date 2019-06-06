@@ -6,10 +6,10 @@ variables:
 trigger:
  - devops-spike
 jobs:
-# - template: templates/cloud-foundry-job.yml
-#   parameters:
-#     feature: Configuration
-#     sample: CloudFoundry
+- template: templates/cloud-foundry-job.yml
+  parameters:
+    feature: Configuration
+    sample: CloudFoundry
 # - template: templates/cloud-foundry-job.yml
 #   parameters:
 #     feature: Configuration
@@ -54,7 +54,7 @@ jobs:
 #   parameters:
 #     feature: Management
 #     sample: CloudFoundry
-- template: templates/cloud-foundry-job.yml
+- template: templates/cloud-foundry-uaac-job.yml
   parameters:
     feature: Security
     sample: CloudFoundrySingleSignon
