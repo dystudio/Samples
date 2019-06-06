@@ -16,7 +16,7 @@ steps:
 - task: UseRubyVersion@0
   displayName: 'Setup Ruby'
   inputs:
-    versionSpec: 2.3.x
+    versionSpec: 2.4.x
 - script: ruby --version
   displayName: 'Ruby Version'
 - script: java -version
