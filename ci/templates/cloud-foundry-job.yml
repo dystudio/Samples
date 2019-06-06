@@ -7,7 +7,7 @@ jobs:
   pool:
     vmImage: Ubuntu-16.04
   steps:
-  - template: setup-tools-steps.yml
+  - template: setup-tools-linux-steps.yml
   # - template: setup-pythonenv-linux-steps.yml
   # - template: setup-cloud-foundry-cli-linux-steps.yml
   # - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
