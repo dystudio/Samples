@@ -1,5 +1,5 @@
 steps:
-- template: setup-tools-linux-steps.yml
+- template: setup-tools-steps.yml
 - script: |
     wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
     echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
