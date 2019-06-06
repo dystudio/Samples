@@ -1,6 +1,0 @@
-steps:
-- powershell: |
-    Set-Content user.ini "[behave.userdata]"
-    Add-Content user.ini "max_attempts = $Env:STEELTOE_MAX_ATTEMPTS"
-    Get-Content user.ini
-  displayName: 'Configure Behave'

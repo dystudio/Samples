@@ -1,6 +1,7 @@
 steps:
 - bash: |
     cat >> user.ini << EOF
+    max_attempts = $STEELTOE_MAX_ATTEMPTS
     cf_apiurl = $STEELTOE_CF_APIURL
     cf_org = $STEELTOE_CF_ORG
     cf_username = $STEELTOE_CF_USERNAME
@@ -11,4 +12,4 @@ steps:
   env:
     STEELTOE_CF_USERNAME: $(steeltoe.cf.username)
     STEELTOE_CF_PASSWORD: $(steeltoe.cf.password)
-  displayName: 'Configure Behave for Cloud Foundry'
+  displayName: 'Configure Behave'
