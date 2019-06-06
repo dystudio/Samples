@@ -21,3 +21,7 @@ steps:
   displayName: 'Ruby Version'
 - script: java -version
   displayName: 'Java Version'
+- script: python -m pip install -r pyenv.pkgs
+  displayName: 'Setup Behave'
+- script: behave --version
+  displayName: 'Behave Version'
