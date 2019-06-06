@@ -8,6 +8,8 @@ jobs:
     vmImage: Ubuntu-16.04
   steps:
   - template: setup-cloud-foundry-linux-steps.yml
+  - script: bash --version
+  - bash: --version
   # - script: behave ${{parameters.feature}}/src/AspDotNetCore/${{parameters.sample}}
   #   displayName: 'Test -> ${{parameters.feature}}: ${{parameters.sample}}'
   # - template: publish-results-steps.yml
