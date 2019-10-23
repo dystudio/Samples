@@ -6,7 +6,6 @@ applications:
   stack: windows
   buildpacks:
    - hwc_buildpack
-  command: .\RabbitMQ
   env:
     ASPNETCORE_ENVIRONMENT: Development
   services:
