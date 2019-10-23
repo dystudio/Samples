@@ -5,7 +5,7 @@ applications:
   disk_quota: 200M
   stack: windows
   buildpacks:
-   - hwc_buildpack
+   - binary_buildpack
   env:
     ASPNETCORE_ENVIRONMENT: Development
   services:
