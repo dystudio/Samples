@@ -1,18 +1,22 @@
-﻿using System.Security.Authentication;
+using System.Security.Authentication;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using RabbitMQ.Client;
 using System.Net.Security;
+using Microsoft.AspNetCore.Hosting;
+using System;
 
 namespace RabbitMQ.Controllers
 {
     public class RabbitMQController : Controller
     {
         ConnectionFactory _rabbitConnection;
+        IHostingEnvironment _env;
 
-        public RabbitMQController([FromServices] ConnectionFactory rabbitConnection)
+        public RabbitMQController([FromServices] ConnectionFactory rabbitConnection, IHostingEnvironment env)
         {
             _rabbitConnection = rabbitConnection;
+            _env = env;
             SslOption opt = _rabbitConnection.Ssl;
             if (opt != null && opt.Enabled)
             {
@@ -27,14 +31,28 @@ namespace RabbitMQ.Controllers
     
         public IActionResult Receive()
         {
-            using (var connection = _rabbitConnection.CreateConnection())
-            using (var channel = connection.CreateModel())
+            //if (_env.IsDevelopment())
+            //{
+            //    //_rabbitConnection.HostName = "localhost";
+            //    _rabbitConnection.HostName = "http://172.16.103.237";
+            //}
+
+            try
             {
-                CreateQueue(channel);
-                var data = channel.BasicGet("rabbit-test", true);
-                if (data != null) {
-                    ViewData["message"] = Encoding.UTF8.GetString(data.Body);
+                using (var connection = _rabbitConnection.CreateConnection())
+                using (var channel = connection.CreateModel())
+                {
+                    CreateQueue(channel);
+                    var data = channel.BasicGet("rabbit-test", true);
+                    if (data != null)
+                    {
+                        ViewData["message"] = Encoding.UTF8.GetString(data.Body);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("RabbitMQController-Receive:" + ex.Message);
             }
 
             return View();
@@ -42,16 +60,29 @@ namespace RabbitMQ.Controllers
 
         public IActionResult Send(string message)
         {
+            //if (_env.IsDevelopment())
+            //{
+            //    //_rabbitConnection.HostName = "localhost";
+            //    _rabbitConnection.HostName = "http://172.16.103.237";
+            //}
+
             if (message != null && message != "") {
-                using (var connection = _rabbitConnection.CreateConnection())
-                using (var channel = connection.CreateModel())
+                try
                 {
-                    CreateQueue(channel);
-                    var body = Encoding.UTF8.GetBytes(message);
-                    channel.BasicPublish(exchange: "",
-                                         routingKey: "rabbit-test",
-                                         basicProperties: null,
-                                         body: body);
+                    using (var connection = _rabbitConnection.CreateConnection())
+                    using (var channel = connection.CreateModel())
+                    {
+                        CreateQueue(channel);
+                        var body = Encoding.UTF8.GetBytes(message);
+                        channel.BasicPublish(exchange: "",
+                                             routingKey: "rabbit-test",
+                                             basicProperties: null,
+                                             body: body);
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    Console.WriteLine("RabbitMQController-Send:" + ex.Message);
                 }
             }
             return View();
@@ -59,11 +90,18 @@ namespace RabbitMQ.Controllers
 
         protected void CreateQueue(IModel channel)
         {
-            channel.QueueDeclare(queue: "rabbit-test",
-                             durable: false,
-                             exclusive: false,
-                             autoDelete: false,
-                             arguments: null);
+            try
+            {
+                channel.QueueDeclare(queue: "rabbit-test",
+                                     durable: false,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("RabbitMQController-CreateQueue:" + ex.Message);
+            }
         }
     }
 }

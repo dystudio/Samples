@@ -15,7 +15,6 @@ namespace RabbitMQ
                 .UseKestrel()
                 .UseCloudFoundryHosting()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .ConfigureAppConfiguration((builderContext, configBuilder) =>
                 {
@@ -23,7 +22,6 @@ namespace RabbitMQ
                     configBuilder.SetBasePath(env.ContentRootPath)
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                        .AddJsonFile("hosting.json", optional: true)
                         .AddEnvironmentVariables()
                         // Add to configuration the Cloudfoundry VCAP settings
                         .AddCloudFoundry();

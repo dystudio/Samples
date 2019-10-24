@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Steeltoe.CloudFoundry.Connector.RabbitMQ;
+using Steeltoe.Management.CloudFoundry;
 
 namespace RabbitMQ.Poc
 {
@@ -31,6 +33,8 @@ namespace RabbitMQ.Poc
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddRabbitMQConnection(Configuration);
+            services.AddCloudFoundryActuators(Configuration);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -49,6 +53,8 @@ namespace RabbitMQ.Poc
                 app.UseHsts();
             }
 
+            app.UseCloudFoundryActuators();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -58,6 +64,9 @@ namespace RabbitMQ.Poc
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "RabbitMQ",
+                    template: "{controller=RabbitMQ}/{action=Send}/{id?}");
             });
         }
     }
