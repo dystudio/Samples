@@ -16,7 +16,10 @@
       }
     },
     "Rabbit": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "http://*:6000"
+      }
     }
   }
 }

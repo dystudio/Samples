@@ -6,7 +6,7 @@ applications:
   stack: windows
   buildpacks:
    - hwc_buildpack
-  command: .\RabbitMQ
+  command: cmd /c .\RabbitMQ --server.urls=http://0.0.0.0:80
   env:
     ASPNETCORE_ENVIRONMENT: Development
   services:

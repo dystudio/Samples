@@ -21,4 +21,10 @@
     <PackageReference Include="Steeltoe.CloudFoundry.ConnectorCore" Version="2.3.0" />
     <PackageReference Include="Steeltoe.Management.CloudFoundryCore" Version="2.3.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="hosting.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
